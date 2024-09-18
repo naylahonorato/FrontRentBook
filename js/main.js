@@ -1,8 +1,9 @@
+const API_URL = "https://booksrental-2jtkn4w3.b4a.run";
 // Funções de autenticação
 function login(email, password) {
   const token = btoa(`${email}:${password}`);
-  return fetch("https://booksrental-2jtkn4w3.b4a.run/login", {
-    method: "POST",
+  return fetch(`${API_URL}/login`, {
+    method: "GET",
     headers: {
       Authorization: `Basic ${token}`,
     },
@@ -12,14 +13,14 @@ function login(email, password) {
       return response.json();
     })
     .then((data) => {
-      localStorage.setItem("token", token);
-      localStorage.setItem("userId", data.id);
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("userId", data.userId);
       window.location.href = "catalog.html";
     });
 }
 
 function register(name, email, phone, password) {
-  return fetch("https://booksrental-2jtkn4w3.b4a.run/user/", {
+  return fetch(`${API_URL}/user/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +33,7 @@ function register(name, email, phone, password) {
     })
     .then((data) => {
       localStorage.setItem("token", data.token);
-      localStorage.setItem("userId", data.id);
+      localStorage.setItem("userId", data.userId);
       window.location.href = "catalog.html";
     });
 }
@@ -40,7 +41,7 @@ function register(name, email, phone, password) {
 // Funções de gerenciamento de livros
 function getBooks() {
   const token = localStorage.getItem("token");
-  return fetch("https://booksrental-2jtkn4w3.b4a.run/book/", {
+  return fetch(`${API_URL}/book/`, {
     headers: {
       Authorization: `Basic ${token}`,
     },
@@ -50,8 +51,9 @@ function getBooks() {
       // Adicionar informação sobre disponibilidade e quem alugou
       return books.map((book) => ({
         ...book,
-        available: !book.rentedBy,
-        rentedByCurrentUser: book.rentedBy === localStorage.getItem("userId"),
+        available: !book.isRented,
+        rentedByCurrentUser:
+          book.rentedBy?.id == localStorage.getItem("userId"),
       }));
     });
 }
@@ -59,7 +61,7 @@ function getBooks() {
 function rentBook(bookId) {
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
-  return fetch("https://booksrental-2jtkn4w3.b4a.run/book/rent", {
+  return fetch(`${API_URL}/book/rent`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -88,7 +90,7 @@ function rentBook(bookId) {
 function returnBook(bookId) {
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
-  return fetch("https://booksrental-2jtkn4w3.b4a.run/book/hand-back", {
+  return fetch(`${API_URL}/book/hand-back`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -116,7 +118,7 @@ function returnBook(bookId) {
 
 function addBook(title, author, image) {
   const token = localStorage.getItem("token");
-  return fetch("https://booksrental-2jtkn4w3.b4a.run/book/", {
+  return fetch(`${API_URL}/book/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
