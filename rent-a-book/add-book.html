@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar Livro - Sistema de Aluguel de Livros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="add-container">
+        <h2>Adicionar Livro</h2>
+      <form id="addBookForm">
+        <div class="form-group">
+          <label for="title">Título:</label>
+          <input type="text" id="title" required />
+        </div>
+        <div class="form-group">
+          <label for="author">Autor:</label>
+          <input type="text" id="author" required />
+        </div>
+        <div class="form-group">
+          <label for="image">URL da Imagem:</label>
+          <input type="url" id="image" required />
+        </div>
+        <button type="submit">Adicionar Livro</button>
+      </form>
+      
+      
+      <a href="catalog.html" class="btn">Voltar para o Catálogo</a>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

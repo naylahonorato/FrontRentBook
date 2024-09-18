@@ -1,0 +1,212 @@
+body {
+ background-color: #000;
+}
+
+.page{
+  max-width: 1280px;
+  color: #fff;
+  font-family: Inter;
+  margin: 0 auto;
+}
+
+.page-container{
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.home{
+  border-bottom: 1px solid rgba(84, 84, 84, 1);
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+
+.titulo-nav{
+  max-width: 173px;
+  display: flex;
+  justify-content:flex-end;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  font-family: "Inter",sans-serif;
+  font-weight:500;
+  font-size:30px;
+}
+
+nav a{
+  text-decoration: none;
+  color: #fff;
+  font-weight:300;
+  font-size: 20px;
+
+}
+
+.container{
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.catalogo{
+  margin-top: 40px;
+  display: grid;
+  gap: 10px 18px;
+}
+
+.titulo-catalogo{
+  margin: 0;
+  max-width: 373px;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: left;
+  gap: 0;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn-adicionar {
+  background: transparent url("../imagens/add_button.png") center no-repeat;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  margin-top: 35px;
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.btn:hover {
+  opacity: 60%;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .titulo-catalogo{
+    font-size: 32px;
+  }
+
+  .btn{
+    margin-left: 120px;
+  }
+}
+
+h2{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.05px;
+  text-align: center;
+  margin: 34px 64px 54px 36px;
+  color: #fff;
+}
+
+.add-container{
+  margin-left:60px;
+  height: 100vh;
+  width: 50%;
+  font-family: "Inter",sans-serif;
+
+}
+
+
+
+.form-group {
+  color: #fff;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button, .btn {
+  display: inline-block;
+  background: #333;
+  margin-bottom: 10px;
+  margin-left: 25%;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+}
+
+button .btn:hover{
+  background: #555;
+}
+
+.p_registro{
+  color: #fff;
+}
+
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px 20px;
+  position: relative;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 282px;
+  width: 100%;
+  position: relative;
+  text-overflow: ellipsis;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
+} 
+
+.book-item img {
+  max-width: 282px;
+  height: 282px;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+
+/* #author{
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 21px 31px 15px;
+  margin: 0;
+  height: 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+#title{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+}*/
+
+button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+} 

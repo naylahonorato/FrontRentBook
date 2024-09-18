@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Sistema de Aluguel de Livros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="form-container add-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="p_registro">Não tem uma conta? <a href="#" id="showRegister">Registre-se</a></p>
+
+      <div id="registerForm" style="display: none">
+        <h2>Registro</h2>
+        <form id="registerFormElement">
+          <div class="form-group">
+            <label for="regName">Nome:</label>
+            <input type="text" id="regName" required />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email:</label>
+            <input type="email" id="regEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Telefone:</label>
+            <input type="tel" id="regPhone" required />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Senha:</label>
+            <input type="password" id="regPassword" required />
+          </div>
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
