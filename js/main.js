@@ -156,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("regEmail").value;
       const phone = document.getElementById("regPhone").value;
       const password = document.getElementById("regPassword").value;
-      console.log(name, email, phone, password);
       register(name, email, phone, password);
     });
   }
