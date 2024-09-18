@@ -20,6 +20,7 @@ function login(email, password) {
 }
 
 function register(name, email, phone, password) {
+  const token = btoa(`${email}:${password}`);
   return fetch(`${API_URL}/user/`, {
     method: "POST",
     headers: {
@@ -32,8 +33,8 @@ function register(name, email, phone, password) {
       return response.json();
     })
     .then((data) => {
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("userId", data.userId);
+      localStorage.setItem("token", token);
+      localStorage.setItem("userId", data.id);
       window.location.href = "catalog.html";
     });
 }
@@ -155,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("regEmail").value;
       const phone = document.getElementById("regPhone").value;
       const password = document.getElementById("regPassword").value;
+      console.log(name, email, phone, password);
       register(name, email, phone, password);
     });
   }
