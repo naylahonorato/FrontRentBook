@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   const registerForm = document.getElementById("registerFormElement");
   const showRegisterLink = document.getElementById("showRegister");
+  const registerQuestion = document.getElementById("register-question");
   const bookList = document.getElementById("bookList");
   const addBookForm = document.getElementById("addBookForm");
 
@@ -164,6 +165,11 @@ document.addEventListener("DOMContentLoaded", () => {
     showRegisterLink.addEventListener("click", (e) => {
       e.preventDefault();
       document.getElementById("registerForm").style.display = "block";
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("login-label").style.display = "none";
+      showRegisterLink.style.display = "none"
+      registerQuestion.style.display = "none"
+
     });
   }
 
